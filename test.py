@@ -14,7 +14,7 @@ def send_udp(alert, end, payload):
         time.sleep(0.030)
     for p in payload:
         sock.sendto(bytes(p), (MCAST_GRP, MCAST_PORT))
-        time.sleep(0.001)
+        time.sleep(0.010)
     for _ in range(13):
         sock.sendto(bytes(end), (MCAST_GRP, MCAST_PORT))
         time.sleep(0.030)
